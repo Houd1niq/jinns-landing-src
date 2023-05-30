@@ -1,0 +1,22 @@
+.menu-item {
+  padding-bottom: 2px;
+  font-size: 36px;
+}
+
+.menu-item:last-child {
+  padding-bottom: 20px;
+}
+
+.menu {
+  position: absolute;
+  z-index: 10;
+  width: 292px;
+
+  @media (max-width: 768px) {
+    position: relative;
+  }
+}
+
+.menu-disabled-item {
+  color: rgba(120, 120, 120, 1);
+}

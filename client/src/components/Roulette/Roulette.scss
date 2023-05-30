@@ -1,0 +1,161 @@
+$small-card-width: 150px;
+
+@keyframes animateScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc((-20vw - 30px) * 30 + (50% - 20vw / 2)));
+  }
+}
+@keyframes animateScrollSmall {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(
+      calc((-1 * $small-card-width - 10px) * 30 + (50% - $small-card-width / 2))
+    );
+  }
+}
+
+@keyframes animateScrollLarge {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(calc(-390px * 30 + (50% - 360px / 2)));
+  }
+}
+
+.animate-scroll {
+  animation: animateScrollLarge 8s cubic-bezier(0.31, 0.13, 0, 1);
+  //transform: translateX(calc(-390px * 30 + (50% - 360px / 2)));
+  //transition: transform 8s cubic-bezier(0.31, 0.13, 0, 1);
+  animation-fill-mode: forwards;
+
+  @media (max-width: 1805px) {
+    animation: animateScroll 8s cubic-bezier(0.31, 0.13, 0, 1);
+    animation-fill-mode: forwards;
+    //transform: translateX(calc((-20vw - 30px) * 30 + (50% - 20vw / 2)));
+  }
+
+  @media (max-width: 768px) {
+    animation: animateScrollSmall 8s cubic-bezier(0.31, 0.13, 0, 1);
+    //transform: translateX(
+    //  calc((-1 * $small-card-width - 10px) * 30 + (50% - $small-card-width / 2))
+    //);
+    animation-fill-mode: forwards;
+  }
+}
+
+.roulette-container__pointer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  border-right: 5px solid #ffffff;
+  z-index: 1;
+}
+
+.roulette {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.roulette__button {
+  margin-top: 40px;
+}
+
+.roulette-container__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  backface-visibility: hidden;
+  will-change: transform;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
+}
+
+.roulette-container {
+  background: rgba(217, 217, 217, 0.14);
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  //box-shadow: 0px 0px 80px 10px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding: 40px 0;
+  perspective: 800px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 10px 0;
+  }
+}
+
+.roulette-card {
+  transition: 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.flip-card {
+  transform: rotateY(0.5turn);
+}
+
+.roulette-card__face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  max-width: 360px;
+  max-height: 360px;
+  aspect-ratio: 1/1;
+  backface-visibility: hidden;
+  transition: 1s ease-in-out;
+
+  &--back {
+    transform: rotateY(0.5turn);
+  }
+}
+
+.roulette-container__item {
+  width: 20vw;
+  max-width: 360px;
+  max-height: 360px;
+  aspect-ratio: 1/1;
+  flex-shrink: 0;
+  box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.5);
+  border-radius: 6%;
+  //overflow: hidden;
+}
+
+.roulette__container__item--img {
+  max-width: 360px;
+  max-height: 360px;
+  width: 20vw;
+  aspect-ratio: 1/1;
+  border-radius: 5%;
+}
+
+@media (max-width: 768px) {
+  .roulette__container__item--img {
+    width: $small-card-width;
+    height: $small-card-width;
+  }
+
+  .roulette-container__item {
+    width: $small-card-width;
+    height: $small-card-width;
+    box-shadow: 0 0 20px 6px rgba(255, 255, 255, 0.5);
+  }
+
+  .roulette-card__face {
+    width: $small-card-width;
+    height: $small-card-width;
+  }
+}

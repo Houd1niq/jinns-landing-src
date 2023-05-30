@@ -1,0 +1,84 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.modal {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 700px;
+  background: #323239;
+  border: 1px solid #ffffff;
+  border-radius: 23px;
+  padding: 20px;
+  z-index: 101;
+
+  @media (max-width: 768px) {
+    width: 75%;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.modal__image {
+  width: 40%;
+  box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.5);
+  border-radius: 6%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    //margin-top: 50px;
+  }
+}
+
+.modal__description {
+  font-family: "sf-ui-display", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 38px;
+  color: #ffffff;
+  margin-left: 20px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.modal .modal__button {
+  display: none;
+  width: 100%;
+  min-width: 0;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: -5px;
+  right: 50px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

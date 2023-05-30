@@ -1,0 +1,57 @@
+.footer {
+  height: 250px;
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../../assets/banner2.png");
+    opacity: 0.6;
+    z-index: 0;
+    background-size: cover;
+    background-position: 50% 35%;
+  }
+}
+
+.footer__container {
+  //z-index: 2;
+  height: 100%;
+  max-width: 1100px;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+.footer__socials {
+  z-index: 30;
+  display: flex;
+  gap: 20px;
+}
+
+.footer__text {
+  padding-right: 15px;
+  font-family: "sf-ui-display", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 43px;
+  color: #ffffff;
+  z-index: 3;
+
+  @media (max-width: 640px) {
+    padding-right: 0;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+  }
+}

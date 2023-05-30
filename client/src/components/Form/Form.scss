@@ -1,0 +1,80 @@
+.pre-register-form {
+  position: relative;
+  max-width: 650px;
+  width: 80%;
+  flex-shrink: 0;
+  background: rgba(217, 217, 217, 0.14);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 80px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 23px 35px 40px;
+  gap: 20px;
+  margin-top: 150px;
+
+  @media (max-width: 640px) {
+    width: 90%;
+    margin-top: 80px;
+    padding: 20px 30px 30px;
+    gap: 15px;
+  }
+}
+
+.pre-register-form__title {
+  font-family: "sf-ui-display", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  text-align: center;
+  color: #ffffff;
+
+  @media (max-width: 640px) {
+    font-size: 30px;
+    line-height: 33px;
+  }
+}
+
+.pre-register-form__label {
+  font-family: "sf-ui-display", sans-serif;
+  max-width: 400px;
+  width: 80%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #848484;
+
+  @media (max-width: 640px) {
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.pre-register-form__input {
+  width: 100%;
+  background: rgba(217, 217, 217, 0.18);
+  border: 2px solid #ffffff;
+  padding: 13px 25px;
+  border-radius: 18px;
+  color: #ffffff;
+  font-family: "sf-ui-display", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 43px;
+  outline: none;
+
+  @media (max-width: 640px) {
+    font-size: 20px;
+    line-height: 28px;
+    //padding: 10px 20px;
+    border-radius: 14px;
+  }
+}
+textarea.pre-register-form__input {
+  display: inline-table;
+}
