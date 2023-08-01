@@ -1,1 +1,1 @@
-Link: [# jinns-landing-src](https://jinnsclub.com)https://jinnsclub.com
+Link: (https://jinnsclub.com)https://jinnsclub.com
