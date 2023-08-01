@@ -1,1 +1,1 @@
-Link: (https://jinnsclub.com)https://jinnsclub.com
+Link: https://jinnsclub.com
